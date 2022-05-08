@@ -1,0 +1,343 @@
+\documentclass[letterpaper,twocolumn]{article}
+
+%% Bubble answer sheet by Steven Segletes,
+%% https://tex.stackexchange.com/a/219531
+
+\usepackage{tikz,graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[colorlinks]{hyperref}
+\usepackage[usestackEOL]{stackengine}
+%%\usepackage[draft]{flowfram}
+%%\usepackage{flowfram}
+%%\ffvadjustfalse
+%%\setlength{\columnsep}{1cm}
+%%\Ncolumn{3}
+
+\frenchspacing
+
+\newcommand{\repeatntimes}[2]{
+   \newcount\i
+   \i=0
+   \newtoks\ans
+   \loop
+      \ans=\expandafter{\the\ans #2}
+      \advance\i by 1
+      \ifnum\i<#1\repeat
+   \the\ans
+}
+
+\newcommand{\countRepeatntimes}[2]{
+   \newcount\i
+   \i=0
+   \newtoks\ans
+   \loop
+      \advance\i by 1
+      \ans=\expandafter{\the\ans #2}
+      \ifnum\i<#1\repeat
+   \the\ans
+}
+
+\newcounter{problem}
+\newcounter{choice}
+\newcommand{\generateTable}[1]{%
+\countRepeatntimes{#1}{\stepcounter{problem}\makebox[2ex][r]{\theproblem.}%\indent
+\setcounter{choice}{0}%
+\repeatntimes{4}{\stepcounter{choice}\textcolor{black!35}{%
+  \raisebox{0.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+    \scalebox{.6}{\footnotesize \Alph{choice}}}{$\bigcirc$}}}} }\par
+    \smallskip
+}
+}
+
+\def\sampleblock{%
+  \makebox[5.1ex]{}
+  \stepcounter{choice}\textcolor{black!35}{%
+   \raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+    \scalebox{.6}{\footnotesize \Alph{choice}}}{$\bigcirc$}}}}
+  \stepcounter{choice}\textcolor{black!35}{%
+   \raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+    \scalebox{.6}{\footnotesize \Alph{choice}}}{$\bigcirc$}}}}
+  \stepcounter{choice}\textcolor{black!35}{%
+   \smash{\raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{-2.5pt}{%
+    \scalebox{8}{\color{black}$\cdot$}}{$\bigcirc$}}}}}
+  \stepcounter{choice}\textcolor{black!35}{%
+   \raisebox{-1.5pt}{\scalebox{1.0}{\stackinset{c}{}{c}{}{%
+    \scalebox{.6}{\footnotesize \Alph{choice}}}{$\bigcirc$}}}}
+\par}
+\voffset=\dimexpr\voffset+.5in
+\textheight=\dimexpr\textheight-.5in
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\sf \thepage}
+\lfoot{\sf AP Strength and Fitness Test}
+\rfoot{\tt \href{https://github.com/jedp/barbell-AP}{github.com/jedp/barbell-AP}}
+
+\begin{document}
+
+\smash{\Shortstack[l]{%
+  \sffamily\Huge {\sf\bf AP} Strength and Fitness\\
+%%  {\sffamily\Huge Bubble Answer Sheet}\\
+  Name \underline{\hspace{2.4in}} Instructor\underline{\hspace{1.2in}}
+    Date\underline{\hspace{1.2in}}\\
+%%  \textcolor{black!50}{\rule{5.9in}{2ex}}\\
+  \strut\\
+  \sampleblock\\
+  \rule{0ex}{4pt}\\}%
+}\vspace{-\baselineskip}\par
+
+\smallskip
+\def\qCount{20}
+\generateTable{\qCount}
+
+\bigskip
+
+{ }
+
+\bigskip
+
+{ }
+
+\bigskip
+
+{ }
+
+\bigskip
+
+
+\small
+
+\begin{enumerate}
+
+  \item Do you even lift?
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Bruh?
+    \item Bruh.
+    \item Bruh \dots
+    \item Bruh!
+  \end{enumerate}
+
+\item A healthy diet includes:
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Little animal-based saturated fats
+    \item Little-animal-based saturated fats
+    \item Fat little animals sated with bass
+    \item Animals lilting fatuously ``bases loaded''
+  \end{enumerate}
+
+\item Smoking is
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Cool
+    \item Bad
+    \item Expensive
+    \item All of the above
+  \end{enumerate}
+
+
+\item There are some individuals who might be eating a healthy diet, exercising
+  regularly, and lifting weights, but still have \underline{\hspace{1in}}.
+
+
+  \begin{enumerate}[label=(\alph*)]
+    \item hygiene
+    \item ennui
+    \item osteoporosis
+    \item the Sunday Scaries
+  \end{enumerate}
+
+\item Which is not an essential amino acid?
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Methionine
+    \item Leucine
+    \item Tryptophan
+    \item Isolde
+  \end{enumerate}
+
+\item Animal-based proteins have been shown to produce a rapid rise in
+  postprandial blood EAA levels, which subsequently produces a large increase
+  in muscle protein synthesis rates. Which is the best synonym for
+  ``postprandial'' in this context?
+
+  \begin{enumerate}[label=(\alph*)]
+    \item occurring after the eating of shrimp
+    \item exdeglutitive
+    \item absolutely sabulous
+    \item peresculentative
+  \end{enumerate}
+
+\item EMOM stands for
+
+  \begin{enumerate}[label=(\alph*)]
+    \item e-mom
+    \item every minute on the minute
+    \item Ethel Merman, only Merman
+    \item English Mational Opera Morth (now Opera Morth)
+  \end{enumerate}
+
+\pagebreak
+
+\item As you know, B\o{}rge Fagerli coined the term ``myo-rep'' sometime in the
+  mid 2000s. What was he talking about?
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Myosis Repugnandi (the ocular disgust reflex)
+    \item One of any Alliance High Command intellitence reports regarding the
+      infamous Abyssin scout, Myo, formerly of the Outer Rim territories
+    \item Something about muscles and repetition
+    \item The standard Metropolitan Youth Orchestra Repertoire
+  \end{enumerate}
+
+
+\item They say muscle hypertrophy follows a dose{}--{}response relationship, with
+  increasingly greater gains achieved with higher training volumes.
+
+  \begin{enumerate}[label=(\alph*)]
+    \item They do, do they?
+    \item No discomfort, no expansion.
+    \item Those dietary confoundings of results, tho.
+    \item Sorry, I wasn't listening?
+  \end{enumerate}
+
+
+\item From the following list, MWS and HWS, with respect to LWS, can best be described as
+
+  \begin{enumerate}[label=(\alph*)]
+    \item weatherbeaten
+    \item clothed with authority
+    \item stale ({\it of bread, etc}.)
+    \item narcotizing ({\it fig}.)
+  \end{enumerate}
+
+
+\item Which of the following does not cause muscle growth?
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Metabolic stress
+    \item Mechanical tension
+    \item Muscle damage
+    \item Motivational interviewing
+  \end{enumerate}
+
+
+\item Pain in the chest often coincides with
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Miosis
+    \item Meiosis
+    \item Myosis
+    \item Mayo
+  \end{enumerate}
+
+
+\item Thigh bone connected to the
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Knee bone
+    \item Leg bone
+    \item Hip bone
+    \item Toe bone
+  \end{enumerate}
+
+
+\item The gastrocnemius is
+
+  \begin{enumerate}[label=(\alph*)]
+    \item A specialist in motion pictures concerning restaurants
+    \item The ``tummy'' of your shin
+    \item Gut feeling
+    \item An anagram of ``goats or cis men''
+  \end{enumerate}
+
+
+\item In her well-known manual {\it Physiology and Calisthenics}, 1856,
+  Catherine Beecher wrote: ``The most terrible evils and deformities
+  that afflict humanity have arisen from the abuses of
+  \underline{\hspace{1in}}.''
+
+  \begin{enumerate}[label=(\alph*)]
+    \item the Auto--Tune device
+    \item dress
+    \item the Catholic church before the Reformation
+    \item statistics
+  \end{enumerate}
+
+
+\item In his {\it Manual of Musical Drill and System of Physical Training for
+  the use of Teachers in Schools}, George Cruden, A.M., prescribes these
+  dimensions for Indian clubs:
+
+  \begin{itemize}
+    \item For infants: 1 foot 8 inches by 3 inches
+    \item For adults: 2 feet 4 inches by 4 inches
+  \end{itemize} 
+
+  What dimensions does he propose for use by boys and girls?
+
+  \begin{enumerate}[label=(\alph*)]
+    \item 1 foot 9 inches by 4 inches
+    \item 1 foot 11 inches by 3 inches
+    \item 1 foot 11 inches by 4 inches
+    \item 2 feet by 4 inches
+  \end{enumerate}
+
+\pagebreak
+
+\item The music to accompany the opening of ranks for the Indian Club
+  Excercises in Cruden's {\it Manual} is a march in D major. This is
+  interesting because the accompaniments for all the subsequent excercises are
+  waltzes, exercises 1--10 of which are either in F major or B-flat major,
+  while 11--18 were composed entirely in \underline{\hspace{1in}}.
+
+  \begin{enumerate}[label=(\alph*)]
+    \item E-flat major
+    \item G major
+    \item C minor (Dorian mode)
+    \item Asia Minor
+  \end{enumerate}
+
+
+\item In his {\it Swedish System of Educational Gymnastics}, 1891, Baron Nils
+  Posse reminds us that ``Medical gymnastics have been known in America under
+  the name `Swedish Movements'.'' By contrast, a classic live recording by jazz
+  pianist and vocalist Les McCann is called
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Norwegian Movement
+    \item Swiss Movement
+    \item Swabian Movement
+    \item St. Nemevomh Sidews
+  \end{enumerate}
+
+
+\item In 1930, Juan Carlos Ceriani, an instructor in Montevideo, Uruguay,
+  created a game for recreation in the YMCA called
+
+  \begin{enumerate}[label=(\alph*)]
+    \item Sitfit
+    \item Balena
+    \item Albal
+    \item Futsal
+  \end{enumerate}
+
+
+\item In the 1985 film {\it Perfect}, which chronicles the appeal aerobics
+  classes held for single people in that benighted decade, Adam Lawrence
+  (played by John Travolta) engages in protracted pelvic exercises with Jesse
+  Wilson (Jamie Lee Curtis), as a result of which he loses his
+
+  \begin{enumerate}[label=(\alph*)]
+    \item journalistic objectivity
+    \item academic skepticism
+    \item cartesian dualism
+    \item human dignity ({\it Menschenw\"urde})
+  \end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
